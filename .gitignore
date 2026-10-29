@@ -5,3 +5,5 @@
 *.mkv
 *.m4v
 .DS_Store
+node_modules/
+motion/studio/out/

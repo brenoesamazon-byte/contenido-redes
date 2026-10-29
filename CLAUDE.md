@@ -48,6 +48,17 @@ Aquí solo se añade el enlace en `semanas/AAAA-SNN/videos.md` con una línea po
 `- 2026-10-29 · tema · plataforma · enlace`.
 Nunca se suben archivos de vídeo (.mp4, .mov…) ni archivos de más de 50 MB al repo.
 
+## Animaciones: Motion Architect (`/motion`)
+
+Para intros, ganchos animados, logos, contadores o tarjetas tipo «ÚLTIMA HORA», usar `/motion` (y `/motion-render` para sacar el mp4).
+Viene incluido en este repo (MIT, de Enrique Rocha / tododeia):
+- Skill y agente en `.claude/skills/motion-architect/` y `.claude/agents/`; comandos en `.claude/commands/`.
+- Estudio de Remotion en `motion/studio/`. En una sesión nueva, si no existe `motion/studio/node_modules`, correr `npm ci --no-fund --no-audit` ahí antes de empezar.
+- Marca de Breno en `motion/studio/brand.json`: sacarla del «Kit de marca Breno» (https://claude.ai/artifact/5amsWkXkC9w4hNy3xmUA2r) la primera vez que se use.
+- Los storyboards se quedan en `motion/studio/storyboards/` y las composiciones en `motion/studio/src/compositions/`, con commit y push como todo lo demás.
+- Los mp4 renderizados (`motion/studio/out/`) NO se suben al repo: van a la carpeta de la semana en Drive y su enlace a `videos.md`.
+- Motion Architect anima; no corta vídeos hablando a cámara. Para quitar pausas se usa la skill de cortes.
+
 ## Commits
 
 Mensajes cortos en español: `añade carrusel errores gimnasio (S44, instagram)`.
