@@ -5,6 +5,8 @@ import { V1Reto } from "./V1Reto";
 import { V2Noticia } from "./V2Noticia";
 import { V3Kinetic } from "./V3Kinetic";
 import { V4Vlog } from "./V4Vlog";
+import { ViralTest } from "./viral/ViralTest";
+import { VIRAL_TOTAL_S } from "./viral/data";
 
 const comps = [
   { id: "BrenoV1Reto", component: V1Reto },
@@ -18,5 +20,6 @@ export const BrenoRoot: React.FC = () => (
     {comps.map((c) => (
       <Composition key={c.id} id={c.id} component={c.component} durationInFrames={TOTAL} fps={FPS} width={1080} height={1920} />
     ))}
+    <Composition id="BrenoViralTest" component={ViralTest} durationInFrames={Math.round(VIRAL_TOTAL_S * FPS)} fps={FPS} width={1080} height={1920} />
   </>
 );
