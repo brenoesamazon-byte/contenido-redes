@@ -1,0 +1,22 @@
+import React from "react";
+import { Composition } from "remotion";
+import { FPS, TOTAL } from "./shared";
+import { V1Reto } from "./V1Reto";
+import { V2Noticia } from "./V2Noticia";
+import { V3Kinetic } from "./V3Kinetic";
+import { V4Vlog } from "./V4Vlog";
+
+const comps = [
+  { id: "BrenoV1Reto", component: V1Reto },
+  { id: "BrenoV2Noticia", component: V2Noticia },
+  { id: "BrenoV3Kinetic", component: V3Kinetic },
+  { id: "BrenoV4Vlog", component: V4Vlog },
+];
+
+export const BrenoRoot: React.FC = () => (
+  <>
+    {comps.map((c) => (
+      <Composition key={c.id} id={c.id} component={c.component} durationInFrames={TOTAL} fps={FPS} width={1080} height={1920} />
+    ))}
+  </>
+);

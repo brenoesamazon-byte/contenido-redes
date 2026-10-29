@@ -59,6 +59,15 @@ Viene incluido en este repo (MIT, de Enrique Rocha / tododeia):
 - Los mp4 renderizados (`motion/studio/out/`) NO se suben al repo: van a la carpeta de la semana en Drive y su enlace a `videos.md`.
 - Motion Architect anima; no corta vídeos hablando a cámara. Para quitar pausas se usa la skill de cortes.
 
+### Vídeos de Breno con animaciones (probado el 29 oct 2026)
+- Flujo: cortes secos con la skill de cortes → copiar el vídeo cortado a `motion/studio/public/local/base.mp4` (ignorado por git) → animar encima con las composiciones de `motion/studio/src/compositions/breno/`.
+- Estilos listos (cada uno es un archivo): `V1Reto` (franja roja + RETO 10K + subtítulos), `V2Noticia` (tarjeta ÚLTIMA HORA + rótulos), `V3Kinetic` (gráficos cinéticos, sin subtítulos), `V4Vlog` (look cine, título de episodio, lista de tareas y cierre con pregunta).
+- Los textos y tiempos van en `SEGMENTS` de `breno/shared.tsx`; el resto de gráficos tiene sus segundos en cada archivo.
+- En la nube no hay Google Fonts: usar la entrada `src/breno.ts` (fuentes del sistema, Poppins) y el Chrome local:
+  `npx remotion render src/breno.ts BrenoV1Reto out/v1.mp4 --browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell --concurrency=2`
+  (si esa ruta no existe, buscar `chrome-headless-shell` con `find /opt -name chrome-headless-shell`). Tarda unos 6 min por vídeo de 54 s.
+- Después, comprimir a menos de 30 MB para enviarlo (`-b:v 3600k`).
+
 ## Commits
 
 Mensajes cortos en español: `añade carrusel errores gimnasio (S44, instagram)`.
