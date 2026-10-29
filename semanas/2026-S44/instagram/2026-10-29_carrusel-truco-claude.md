@@ -5,7 +5,7 @@ Plataforma: Instagram (carrusel, 8 diapositivas) / TikTok (fotos) · Tipo: carru
 Basado en la estructura de un carrusel brasileño (luanamariamarina), cambiando lo que enseñaba (sacar datos de seguidores, problema legal) por un análisis de contenido público.
 Fotos de Breno con el fondo de la oficina cambiado por el estudio. Capturas reales de su Claude; chats de la barra lateral fuera y la cara de la creadora del reel difuminada.
 
-1. Te voy a enseñar una cosa, pero úsala con responsabilidad
+1. Así sé qué vídeo va a funcionar antes de grabarlo
 2. Abre Claude
 3. Antes, guárdalo y compártelo con ese amigo que crea contenido
 4. Busca una cuenta grande de tu nicho
