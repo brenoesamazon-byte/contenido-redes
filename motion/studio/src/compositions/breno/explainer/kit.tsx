@@ -1,4 +1,5 @@
 import React from "react";
+import { useF } from "./frame";
 import { Img, interpolate, spring, staticFile, useCurrentFrame } from "remotion";
 import { ease, progress, springs } from "../../../lib/motion";
 import { B, f } from "../shared";
@@ -10,7 +11,7 @@ export const C = { bg: "#0b0f14", card: "#151b23", line: "rgba(255,255,255,.12)"
 
 /** Escena: ventana de tiempo con entrada suave y salida rápida. Los hijos reciben el frame local. */
 export const Scene: React.FC<{ s: number; e: number; children: (l: number, t: number) => React.ReactNode }> = ({ s, e, children }) => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   if (frame < f(s) || frame >= f(e)) return null;
   const l = frame - f(s);
   const pin = progress(l, 0, 10);
@@ -24,7 +25,7 @@ export const Scene: React.FC<{ s: number; e: number; children: (l: number, t: nu
 
 /** Aparece con muelle cuando el tiempo global pasa de `at` (segundos). */
 export const usePop = (at: number, cfg = springs.snappy) => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   return spring({ frame: frame - f(at), fps: 30, config: cfg });
 };
 
@@ -37,7 +38,7 @@ export const Pop: React.FC<{ at: number; children: React.ReactNode; style?: Reac
 
 /** Número que cuenta hasta su valor. */
 export const Count: React.FC<{ at: number; to: number; dur?: number; prefix?: string; suffix?: string; size?: number; color?: string; decimals?: number }> = ({ at, to, dur = 1.6, prefix = "", suffix = "", size = 180, color = C.yellow, decimals = 0 }) => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   const v = interpolate(frame, [f(at), f(at + dur)], [0, to], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: ease.out });
   const txt = v.toLocaleString("es-ES", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
   return <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: size, color, lineHeight: 1, textAlign: "center", fontVariantNumeric: "tabular-nums", textShadow: `0 0 40px ${color}55` }}>{prefix}{txt}{suffix}</div>;
@@ -55,7 +56,7 @@ export const Emoji: React.FC<{ e: string; size?: number; style?: React.CSSProper
 
 /** Flecha que se dibuja. */
 export const Arrow: React.FC<{ at: number; w?: number; dir?: "right" | "down" }> = ({ at, w = 90, dir = "right" }) => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   const p = progress(frame, f(at), 10);
   return <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 70, color: C.yellow, opacity: p, transform: `${dir === "down" ? "rotate(90deg) " : ""}translateX(${(1 - p) * -20}px)`, width: w, textAlign: "center" }}>→</div>;
 };

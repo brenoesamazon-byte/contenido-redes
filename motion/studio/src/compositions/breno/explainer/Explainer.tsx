@@ -1,4 +1,5 @@
 import React from "react";
+import { useF } from "./frame";
 import { AbsoluteFill, Audio, interpolate, Sequence, spring, staticFile, useCurrentFrame } from "remotion";
 import { ease, progress, springs } from "../../../lib/motion";
 import { f } from "../shared";
@@ -9,7 +10,7 @@ import { Arrow, Avatar, C, Card, Count, Cross, Emoji, EMO, FONT, Label, Pop, Sce
 
 // Texto de arriba: la frase que se está diciendo, palabra a palabra, con las clave en caja amarilla.
 const TopText: React.FC = () => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   const t = frame / 30;
   const c = CUES.find(([s, e]) => t >= s && t < e);
   if (!c) return null;
@@ -31,7 +32,7 @@ const TopText: React.FC = () => {
 };
 
 const Bg: React.FC = () => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   const g = 0.5 + 0.5 * Math.sin(frame / 40);
   return (
     <AbsoluteFill style={{ background: C.bg }}>
@@ -43,7 +44,7 @@ const Bg: React.FC = () => {
 
 // Barra de progreso fina (estilo reproductor) con la sección actual
 const Progress: React.FC = () => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   return <div style={{ position: "absolute", left: 60, right: 60, top: 260, height: 6, borderRadius: 9, background: "rgba(255,255,255,.1)" }}><div style={{ width: `${(frame / f(241.6)) * 100}%`, height: "100%", borderRadius: 9, background: C.yellow }} /></div>;
 };
 
@@ -51,10 +52,12 @@ const Center: React.FC<{ children: React.ReactNode; gap?: number; dir?: "row" | 
   <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: dir, alignItems: "center", justifyContent: "center", gap, ...style }}>{children}</div>
 );
 
-export const Explainer: React.FC = () => {
-  const frame = useCurrentFrame();
+export const WHOOSH_OLD: number[] = [0, 10.66, 20.04, 37.73, 46.79, 56.05, 69.81, 82.66, 96.14, 101.32, 114.6, 134.34, 145.68, 170.43, 191.37, 198.29, 212.82, 221.19, 226.0];
+
+export const Explainer: React.FC<{ withAudio?: boolean }> = ({ withAudio = true }) => {
+  const frame = useF();
   const t = frame / 30;
-  const whoosh: number[] = [0, 10.66, 20.04, 37.73, 46.79, 56.05, 69.81, 82.66, 96.14, 101.32, 114.6, 134.34, 145.68, 170.43, 191.37, 198.29, 212.82, 221.19, 226.0];
+  const whoosh = withAudio ? WHOOSH_OLD : [];
   return (
     <AbsoluteFill>
       <Bg />
@@ -182,7 +185,7 @@ export const Explainer: React.FC = () => {
         return (
           <Center>
             <Pop at={96.3} from="scale"><Emoji e="❤️" size={300} style={{ transform: `scale(${beat})` }} /></Pop>
-            <Pop at={96.8}><Label size={70}>Dale like</Label></Pop>
+            <Pop at={96.8}><Label size={70}>Dale a me gusta</Label></Pop>
             <Pop at={98.0}><Label size={44} color={C.muted}>así le llega a más gente</Label></Pop>
           </Center>
         );
@@ -311,7 +314,7 @@ export const Explainer: React.FC = () => {
       {/* 17 · Comenta, envía, guarda */}
       <Scene s={226.0} e={241.6}>{() => <Outro />}</Scene>
 
-      <Audio src={staticFile("local/vo_clean.wav")} />
+      {withAudio && <Audio src={staticFile("local/vo_clean.wav")} />}
       {whoosh.map((s) => (
         <Sequence key={s} from={f(s)} durationInFrames={20}><Audio src={staticFile("sfx/casino/card-slide-3.ogg")} volume={0.28} /></Sequence>
       ))}
@@ -321,7 +324,7 @@ export const Explainer: React.FC = () => {
 
 // Puntos que se encienden por el mundo
 const WorldDots: React.FC<{ at: number }> = ({ at }) => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   return (
     <div style={{ position: "relative", width: 900, height: 260 }}>
       {Array.from({ length: 60 }).map((_, i) => {
@@ -335,7 +338,7 @@ const WorldDots: React.FC<{ at: number }> = ({ at }) => {
 
 // Calculadora: 300 × 100 € = 30.000 €
 const Calc: React.FC = () => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   const parts: [string, number, string][] = [["300", 136.0, C.text], ["×", 136.9, C.muted], ["100 €", 137.4, C.text], ["=", 139.0, C.muted]];
   const res = interpolate(frame, [f(139.2), f(140.6)], [0, 30000], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: ease.out });
   return (
@@ -350,7 +353,7 @@ const Calc: React.FC = () => {
 
 // "¿Humo?" con humo que sube
 const Smoke: React.FC<{ at: number }> = ({ at }) => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   const l = frame - f(at);
   if (l < 0) return null;
   return (
@@ -363,7 +366,7 @@ const Smoke: React.FC<{ at: number }> = ({ at }) => {
 
 // Muro que se rompe y deja ver una puerta
 const WallToDoor: React.FC<{ at: number }> = ({ at }) => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   const k = progress(frame, f(at) + 18, 16, ease.out);
   return (
     <div style={{ position: "relative", width: 900, height: 560 }}>
@@ -379,7 +382,7 @@ const WallToDoor: React.FC<{ at: number }> = ({ at }) => {
 
 // 100 puntos, 4 se encienden
 const Dots: React.FC<{ at: number; hiAt: number }> = ({ at, hiAt }) => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   const hi = [12, 47, 63, 88];
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(10, 56px)", gap: 14 }}>
@@ -394,7 +397,7 @@ const Dots: React.FC<{ at: number; hiAt: number }> = ({ at, hiAt }) => {
 
 // Puerta que se abre
 const Door: React.FC<{ at: number }> = ({ at }) => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   const o = progress(frame, f(at) + 6, 30, ease.inOut);
   return (
     <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 30 }}>
@@ -410,13 +413,13 @@ const Door: React.FC<{ at: number }> = ({ at }) => {
 
 // Cierre: caja de comentario + enviar + guardar
 const Outro: React.FC = () => {
-  const frame = useCurrentFrame();
+  const frame = useF();
   const msg = "Yo sé hacer… ✍️";
   const n = Math.max(0, Math.min(msg.length, Math.floor((frame - f(227.0)) / 3)));
   return (
     <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 28 }}>
       <Pop at={226.1}><Card style={{ width: 880, display: "flex", alignItems: "center", gap: 20, background: "#fff" }}><div style={{ width: 80, height: 80, borderRadius: 99, background: "linear-gradient(135deg,#feda75,#d62976,#4f5bd5)" }} /><div style={{ flex: 1, fontFamily: FONT, fontWeight: 700, fontSize: 50, color: n ? "#0f1419" : "#9ca3af" }}>{n ? msg.slice(0, n) : "Añade un comentario…"}</div><div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 40, color: "#0095f6" }}>Publicar</div></Card></Pop>
-      <Pop at={231.0}><Label size={46} color={C.muted}>¿Qué sabes hacer que otros pagarían por aprender?</Label></Pop>
+      <Pop at={231.0}><Label size={40} color={C.muted} style={{ maxWidth: 820 }}>¿Qué sabes hacer que otros pagarían por aprender?</Label></Pop>
       <div style={{ display: "flex", gap: 24, marginTop: 10 }}>
         <Pop at={233.1} from="scale"><Card accent={C.yellow} style={{ display: "flex", alignItems: "center", gap: 16, padding: "18px 28px" }}><Emoji e="📲" size={70} /><Label size={42}>Envíaselo a ese amigo</Label></Card></Pop>
       </div>

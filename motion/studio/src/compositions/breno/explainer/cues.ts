@@ -30,7 +30,7 @@ export const CUES: [number, number, string][] = [
   [82.66, 85.88, "El marketing digital es la otra mitad:"],
   [85.88, 91.84, "cómo consigues que ese producto llegue a la persona que lo necesita."],
   [91.84, 96.14, "Sin marketing, el mejor curso del mundo no lo compra nadie."],
-  [96.14, 101.32, "Si te está gustando, dale like, que así este vídeo le llega a más personas."],
+  [96.14, 101.32, "Por cierto, si te está gustando, dale a me gusta. Así le llega a más gente."],
   [101.32, 105.9, "No es solo cosa de Brasil. En Kajabi, otra plataforma,"],
   [105.9, 110.5, "los creadores ya han facturado más de 10.000 millones de dólares."],
   [110.5, 114.6, "Casi 1.800 se han hecho millonarios."],
@@ -60,7 +60,7 @@ export const CUES: [number, number, string][] = [
   [193.2, 195.87, "porque esto no es un vídeo de vendehumos:"],
   [195.87, 198.29, "simple no significa fácil."],
   [198.29, 201.79, "Según Goldman Sachs, solo el"],
-  [201.79, 206.0, "4 % de los creadores pasa de 100.000 al año."],
+  [201.79, 206.0, "4 % de los creadores pasa de 100.000 dólares al año."],
   [206.0, 212.82, "Hace falta saber algo, saber venderlo y ser constante."],
   [212.82, 216.99, "Pero la puerta está abierta para gente normal,"],
   [216.99, 221.19, "y está más abierta aquí que en casi ningún sitio."],
@@ -73,4 +73,4 @@ export const CUES: [number, number, string][] = [
 ];
 
 // Palabras resaltadas con caja amarilla (como en el vídeo de referencia)
-export const HL = ["2007", "ebook", "10.000", "millones", "España", "Hotmart", "2011", "250.000", "188", "550", "infoproducto?", "empaquetado.", "mil", "marketing", "mitad:", "nadie.", "like,", "Kajabi,", "1.800", "millonarios.", "seguidores.", "300", "30.000", "humo.", "Lamborghini", "desconfía.", "oportunidad.", "fácil.", "4", "%", "constante.", "abierta", "cero,", "comentarios", "amigo", "guárdalo"];
+export const HL = ["2007", "ebook", "10.000", "millones", "España", "Hotmart", "2011", "250.000", "188", "550", "infoproducto?", "empaquetado.", "mil", "marketing", "mitad:", "nadie.", "like,", "gusta.", "Kajabi,", "1.800", "millonarios.", "seguidores.", "300", "30.000", "humo.", "Lamborghini", "desconfía.", "oportunidad.", "fácil.", "4", "%", "constante.", "abierta", "cero,", "comentarios", "amigo", "guárdalo"];
