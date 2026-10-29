@@ -35,3 +35,14 @@ Yo lo estoy construyendo en directo, desde cero, con trabajo y con mis hijos. Y 
 - Goldman Sachs: ~4 % de los creadores ganan más de 100.000 $ al año
 - 300 × 100 € = 30.000 €: ejemplo de cálculo, no un resultado prometido.
 - La desconfianza en España y los ejemplos de gurús son opinión de Breno, no un dato.
+
+## Texto de publicación
+
+**Instagram**
+Un ebook de videojuegos de 2007 acabó creando una empresa por la que pasan más de 10.000 millones al año. Eso son los infoproductos: vender lo que sabes. En España casi nadie se fía… y por eso todavía hay hueco para los que lo hacen bien.
+¿Qué sabes hacer tú que otros pagarían por aprender? Te leo 👇
+#infoproductos #marketingdigital #emprenderonline #negociodigital #creadoresdecontenido
+
+**TikTok**
+De un ebook de 2007 a 10.000 millones al año 🤯 Así funcionan los infoproductos y por qué en España aún hay hueco. ¿Qué sabes hacer tú que otros pagarían por aprender?
+#infoproductos #marketingdigital #emprender #negociosonline #aprendeentiktok
