@@ -29,4 +29,4 @@ Plataforma: Instagram (historia) · Tipo: resumen + historia · Publicación: 29
 - Que los emojis no tapen el CTA final.
 
 ## Texto de la historia
-"Hoy he puesto a una IA a editar mis vídeos 🤖 ¿Os cuento cómo lo hago?" + pegatina de preguntas abajo.
+v2 (sin llamada a la acción, sin la oficina real): intro "He puesto a una IA a editar mis vídeos 🤖" → terminal escribiendo las órdenes → barras de progreso de cada fase → herramientas conectadas a Claude Code → 4 estilos a la vez → efectos → gancho animado → balance del día 17 (2 vídeos, 5 estilos, 0 programas de edición).
