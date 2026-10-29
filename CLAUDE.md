@@ -42,7 +42,8 @@ Cabecera breve: plataforma, tipo (guion, carrusel, texto…), fecha prevista de 
 
 ## Vídeos: NO van en este repo
 
-Los vídeos se guardan en Google Drive, en la carpeta `Contenido redes / AAAA-SNN`.
+Los vídeos se guardan en Google Drive, en la carpeta `Contenido redes / AAAA-SNN`
+(carpeta raíz: https://drive.google.com/drive/folders/1Y6KUANpbYx5XpmudmmPXSHbCPFGsyKVq).
 Aquí solo se añade el enlace en `semanas/AAAA-SNN/videos.md` con una línea por vídeo:
 `- 2026-10-29 · tema · plataforma · enlace`.
 Nunca se suben archivos de vídeo (.mp4, .mov…) ni archivos de más de 50 MB al repo.
