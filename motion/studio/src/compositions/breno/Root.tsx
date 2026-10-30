@@ -13,6 +13,7 @@ import { VO_TOTAL_S } from "./explainer/cues";
 import { ExplainerTTS, TTS_TOTAL_S } from "./explainer/Warp";
 import { Cover } from "./explainer/Cover";
 import { ClaudePerfil, CLAUDE_PERFIL_TOTAL_S } from "./ClaudePerfil";
+import { ClaudePerfil2, CLAUDE_PERFIL2_TOTAL_S } from "./ClaudePerfil2";
 
 const comps = [
   { id: "BrenoV1Reto", component: V1Reto },
@@ -31,6 +32,7 @@ export const BrenoRoot: React.FC = () => (
     <Composition id="BrenoCoverInfoproductos" component={Cover} durationInFrames={1} fps={FPS} width={1080} height={1920} />
     <Composition id="BrenoStoryRecap" component={StoryRecap} durationInFrames={STORY_TOTAL} fps={FPS} width={1080} height={1920} />
     <Composition id="BrenoClaudePerfil" component={ClaudePerfil} durationInFrames={Math.round(CLAUDE_PERFIL_TOTAL_S * FPS)} fps={FPS} width={1080} height={1920} />
+    <Composition id="BrenoClaudePerfil2" component={ClaudePerfil2} durationInFrames={Math.round(CLAUDE_PERFIL2_TOTAL_S * FPS)} fps={FPS} width={1080} height={1920} />
     <Composition id="BrenoViralTest" component={ViralTest} durationInFrames={Math.round(VIRAL_TOTAL_S * FPS)} fps={FPS} width={1080} height={1920} />
   </>
 );
