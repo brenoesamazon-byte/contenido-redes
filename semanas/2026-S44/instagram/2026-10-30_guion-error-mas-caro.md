@@ -11,7 +11,7 @@ CARO ME HA SALIDO
 **Guion**
 El error que más caro me ha salido emprendiendo no fue perder dinero. Fue querer hacerlo todo a la vez. Te lo cuento porque seguramente tú estás haciendo lo mismo ahora.
 
-Yo empecé una agencia, un ebook, [la idea de otro negocio] y [otro proyecto], todo al mismo tiempo. Pensaba que cuantas más cosas tuviera abiertas, más posibilidades tenía de que alguna funcionara. Y pasó justo lo contrario. Con trabajo y con dos niños en casa, cada hora que le daba a un proyecto se la quitaba a los otros. Al final tenía cinco cosas a medias y ninguna terminada. No es que me faltaran ideas, es que me faltaba foco. Así que hice algo que me costó muchísimo: dejar cosas aparcadas y meterle todo a una sola. Y desde que lo hago, por primera vez veo avances de verdad, día a día.
+Yo empecé una agencia, un ebook, [la idea de otro negocio] y [otro proyecto], todo al mismo tiempo. Pensaba que con más cosas abiertas, alguna funcionaría. Y pasó justo lo contrario. Con trabajo y con dos niños en casa, cada hora que le daba a un proyecto se la quitaba a los otros. Al final tenía todo a medias y nada terminado. No me faltaban ideas, me faltaba foco. Así que aparqué casi todo y me centré en una sola cosa. Y por primera vez veo avances de verdad.
 
 Dime en comentarios cuántos proyectos tienes abiertos ahora mismo, y guárdate este vídeo para el día que te entren ganas de empezar otro.
 
