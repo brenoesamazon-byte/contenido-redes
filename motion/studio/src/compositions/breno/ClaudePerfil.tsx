@@ -130,13 +130,38 @@ const Cta: React.FC = () => {
   );
 };
 
+const CUTS = [0, 7.02, 7.82, 8.79, 10.59, 13.58, 21.29, 21.84, 25.74, 27.24, 32.44, 36.59, 38.34, 41.19, 46.09];
+const FLASH = [8.79, 10.59, 13.58, 32.44, 36.59, 41.19];
+const WHOOSH = [8.72, 10.52, 13.5, 32.37, 36.52, 41.1];
+
+// Música de fondo: más baja cuando hablas, sube un poco en los planos del portátil y se apaga al final.
+const padVol = (fr: number) => {
+  const t = fr / FPS;
+  const broll = (t >= 10.59 && t < 13.58) || (t >= 32.44 && t < 36.59) ? 0.13 : 0.075;
+  const fin = interpolate(t, [46.6, 48.6], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const ini = interpolate(t, [0, 1], [0.4, 1], { extrapolateRight: "clamp" });
+  return broll * fin * ini;
+};
+const beatVol = (start: number, end: number, v: number) => (fr: number) => {
+  const t = fr / FPS + start;
+  return v * interpolate(t, [start, start + 0.6, end - 1.2, end], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+};
+
 export const ClaudePerfil: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   const subsY = t >= 14.97 && t < 32.45 ? 1420 : t >= 41.2 ? 1500 : 1430;
+  // Zoom lento dentro de cada plano (sin acercarse demasiado) y destello corto en los cambios de escena.
+  const segStart = [...CUTS].reverse().find((c) => t >= c) ?? 0;
+  const segEnd = CUTS.find((c) => c > t) ?? CLAUDE_PERFIL_TOTAL_S;
+  const zoom = 1 + 0.03 * Math.min(1, (t - segStart) / Math.max(0.5, segEnd - segStart));
+  const flash = FLASH.reduce((a, c) => Math.max(a, interpolate(t - c, [0, 0.04, 0.2], [0, 0.5, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })), 0);
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      <OffthreadVideo src={staticFile("local/claude_base.mp4")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      <AbsoluteFill style={{ transform: `scale(${zoom})` }}>
+        <OffthreadVideo src={staticFile("local/claude_base.mp4")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      </AbsoluteFill>
+      <AbsoluteFill style={{ background: "#fff", opacity: flash, pointerEvents: "none" }} />
       <HookCard />
       <ClaudeChip start={10.6} end={13.55} text="Claude analizando mi perfil" />
       <PointCard start={14.97} end={21.3} n="1" a="9 DE CADA 10" b="SON DE BRASIL" />
@@ -156,6 +181,15 @@ export const ClaudePerfil: React.FC = () => {
       ))}
       <Sequence from={f(41.2)} durationInFrames={20}><Audio src={staticFile("sfx/interface/bong_001.ogg")} volume={0.4} /></Sequence>
       <Sequence from={f(44.4)} durationInFrames={10}><Audio src={staticFile("sfx/ui/click3.ogg")} volume={0.5} /></Sequence>
+
+      {/* Música suave de fondo */}
+      <Audio src={staticFile("local/pad.wav")} volume={padVol} />
+      {/* Latido: tensión en el gancho y en el dato que duele */}
+      <Sequence from={0} durationInFrames={f(8.8)}><Audio src={staticFile("local/heartbeat.wav")} volume={beatVol(0, 8.8, 0.5)} /></Sequence>
+      <Sequence from={f(21.37)} durationInFrames={f(5.85)}><Audio src={staticFile("local/heartbeat.wav")} volume={beatVol(21.37, 27.22, 0.45)} /></Sequence>
+      {WHOOSH.map((s) => (
+        <Sequence key={`w${s}`} from={f(s)} durationInFrames={20}><Audio src={staticFile("local/whoosh.wav")} volume={0.35} /></Sequence>
+      ))}
     </AbsoluteFill>
   );
 };
