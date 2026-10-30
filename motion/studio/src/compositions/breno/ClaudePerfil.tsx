@@ -18,7 +18,7 @@ const SEGS: { start: number; end: number; text: string }[] = [
   { start: 25.82, end: 27.22, text: "Ven el vídeo y se van" },
   { start: 27.29, end: 28.05, text: "Y tres" },
   { start: 28.09, end: 32.45, text: "Los vídeos que más enganchan son los que cuento mi vida no los de consejos" },
-  { start: 32.5, end: 34.78, text: "Y esto no_solo sirve para_redes" },
+  { start: 32.5, end: 34.78, text: "Y_esto_no_solo_sirve_para_redes" },
   { start: 34.84, end: 38.33, text: "Si vendes algo es lo mismo que entender por qué" },
   { start: 38.39, end: 41.15, text: "la gente entra en tu página y no compra" },
   { start: 41.19, end: 43.3, text: "Comenta PERFIL y te mando el prompt" },
