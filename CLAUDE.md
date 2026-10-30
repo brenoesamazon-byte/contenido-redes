@@ -9,6 +9,14 @@ Todo lo que Breno pida para redes (guion, carrusel, texto de publicación, ideas
 se guarda automáticamente en este repo, en la carpeta que toque, y al terminar se hace
 `git add`, `git commit` y `git push` sin pedir confirmación.
 
+## Regla: cuando Breno manda un vídeo, entregar el paquete completo de una vez
+
+Sin preguntar y en una sola entrega:
+1. **Vídeo editado** (cortes, subtítulos, animaciones, sonido), comprimido a menos de 30 MB y enviado con SendUserFile.
+2. **Guion final** tal como queda en el montaje, con texto en pantalla, textos de publicación para Instagram y TikTok (máx. 5 hashtags) y, si hay CTA con palabra, el regalo que se manda.
+3. **Portada** 1080x1920 en JPG: fotograma con la boca cerrada mirando a cámara, con el título del gancho (2 líneas sin puntuación) arriba, sin tapar la cara. Se saca con `remotion still` o ffmpeg + texto.
+Todo se guarda en la carpeta de la semana (el .md del guion; la portada en una subcarpeta con el mismo nombre) con commit y push. Solo se pregunta si falta algo imprescindible.
+
 ## Estructura
 
 ```
