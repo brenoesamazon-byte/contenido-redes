@@ -17,6 +17,10 @@ Sin preguntar y en una sola entrega:
 3. **Portada** 1080x1920 en JPG: fotograma con la boca cerrada mirando a cámara, con el título del gancho (2 líneas sin puntuación) arriba, sin tapar la cara. Se saca con `remotion still` o ffmpeg + texto.
 Todo se guarda en la carpeta de la semana (el .md del guion; la portada en una subcarpeta con el mismo nombre) con commit y push. Solo se pregunta si falta algo imprescindible.
 
+## Regla: ganchos siempre del banco
+
+Antes de escribir cualquier guion o portada, leer `plantillas/ganchos.md` (reglas de Callaway + banco de 30 ganchos + formato «El truco de Claude»). Cada gancho sale de un tipo del banco, sin repetir tipo dos días seguidos, y se apunta en el «Registro de ganchos usados» de ese archivo.
+
 ## Estructura
 
 ```
