@@ -9,7 +9,7 @@ POR QUÉ NO ME SIGUEN
 **Guion**
 Me faltan 40 seguidores para llegar a 5.000 y esta semana he perdido, así que le pedí a Claude que me dijera por qué.
 
-Le pasé mis estadísticas y en dos minutos me soltó tres cosas que yo no había visto. Una: casi nueve de cada diez seguidores son de Brasil, y yo hablo en español, así que mis vídeos no les llegan. Dos: en un mes entero, cero personas tocaron el enlace de mi perfil. Ven el vídeo y se van sin saber quién soy. Y tres: los vídeos que más enganchan son en los que cuento mi vida, no los de consejos. Y esto no sirve solo para redes: si vendes algo, es lo mismo que entender por qué la gente entra en tu página y no compra.
+Le pasé mis estadísticas y en dos minutos me soltó tres cosas que yo no había visto. Una: casi nueve de cada diez seguidores son de Brasil, y yo hablo en español, así que mis vídeos no les llegan. Dos: en un mes me vieron más de 8.000 personas y solo me siguieron 6. Ven el vídeo y se van. Y tres: los vídeos que más enganchan son en los que cuento mi vida, no los de consejos. Y esto no sirve solo para redes: si vendes algo, es lo mismo que entender por qué la gente entra en tu página y no compra.
 
 Comenta PERFIL y te mando el prompt para que lo hagas con tu cuenta. Sígueme, que si no, el mensaje no te llega.
 
@@ -22,7 +22,7 @@ Comenta PERFIL y te mando el prompt para que lo hagas con tu cuenta. Sígueme, q
 
 **Notas**
 - Marca «he perdido» en la primera frase.
-- «Cero personas» más despacio: es el dato que más duele.
+- «Solo me siguieron 6» más despacio: es el dato que más duele.
 
 ## Prompt (el regalo de PERFIL)
 Actúa como estratega de Instagram. Te paso mis estadísticas de los últimos 30 días (seguidores, de dónde son, alcance, toques en el perfil) y mi bio. Dime: 1) las 3 razones principales por las que la gente me ve pero no me sigue, con el dato que lo demuestra; 2) qué cambiaría hoy en mi perfil; 3) qué tipo de vídeo debería subir más y cuál menos. Sé directo, sin rodeos.
