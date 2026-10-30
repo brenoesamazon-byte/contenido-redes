@@ -1,18 +1,17 @@
-Plataforma: Instagram (carrusel, 8 diapositivas) / TikTok (fotos) · Tipo: carrusel · Publicación: 29–30 oct 2026 · Estado: listo
+Plataforma: Instagram (carrusel, 7 diapositivas) / TikTok (fotos) · Tipo: carrusel · Publicación: 29–30 oct 2026 · Estado: listo
 
 # Carrusel: el truco de Claude para saber qué le funciona a una cuenta grande
 
 Basado en la estructura de un carrusel brasileño (luanamariamarina), cambiando lo que enseñaba (sacar datos de seguidores, problema legal) por un análisis de contenido público.
 Fotos de Breno con el fondo de la oficina cambiado por el estudio. Capturas reales de su Claude; chats de la barra lateral fuera y la cara de la creadora del reel difuminada.
 
-1. Así sé qué vídeo va a funcionar antes de grabarlo
-2. Abre Claude
-3. Antes, guárdalo y compártelo con ese amigo que crea contenido
-4. Busca una cuenta grande de tu nicho
-5. Pega este PROMPT
-6. En minutos sabes qué le funciona y por qué
-7. Y te dice qué tienes que grabar tú
-8. ¿Quieres crecer sin anuncios? Comenta IDEAS y te mando el prompt por privado
+1. ¿No sabes qué grabar? Claude te lo dice en 2 minutos
+2. Antes, guárdalo y compártelo con ese amigo que crea contenido
+3. Abre Claude y pega este PROMPT
+4. Cambia [cuenta] por una grande de tu nicho (ejemplo real con @hotmart.spain)
+5. Te dice qué le funciona y cuántas vistas tiene
+6. Y qué tienes que grabar tú
+7. ¿Quieres el prompt? Comenta IDEAS y te lo mando por privado
 
 ## Prompt (el que se manda por privado)
 Actúa como estratega de contenido. Busca en internet a [cuenta] del nicho de [tu nicho]. Dime:
