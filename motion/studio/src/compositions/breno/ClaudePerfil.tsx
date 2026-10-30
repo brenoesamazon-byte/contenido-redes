@@ -18,7 +18,7 @@ const SEGS: { start: number; end: number; text: string }[] = [
   { start: 25.82, end: 27.22, text: "Ven el vídeo y se van" },
   { start: 27.29, end: 28.05, text: "Y tres" },
   { start: 28.09, end: 32.45, text: "Los vídeos que más enganchan son los que cuento mi vida no los de consejos" },
-  { start: 32.5, end: 34.78, text: "Y esto no solo sirve para redes" },
+  { start: 32.5, end: 34.78, text: "Y esto no_solo sirve para_redes" },
   { start: 34.84, end: 38.33, text: "Si vendes algo es lo mismo que entender por qué" },
   { start: 38.39, end: 41.15, text: "la gente entra en tu página y no compra" },
   { start: 41.19, end: 43.3, text: "Comenta PERFIL y te mando el prompt" },
@@ -57,7 +57,7 @@ const Subs: React.FC<{ y: number }> = ({ y }) => {
     <div style={{ position: "absolute", left: 50, right: 50, top: y, display: "flex", justifyContent: "center" }}>
       <div style={{ transform: `scale(${s})`, textAlign: "center", fontFamily: B.font, fontWeight: 700, fontSize: size, lineHeight: 1.08, color: B.white, WebkitTextStroke: `${size * 0.09}px #000`, paintOrder: "stroke fill", textShadow: "0 6px 18px rgba(0,0,0,.35)" }}>
         {c.words.map((w, i) => (
-          <span key={i} style={{ color: KEY.includes(w.replace(/[^A-Z0-9.ÁÉÍÓÚÑ]/g, "")) ? B.yellow : B.white }}>{w}{i < c.words.length - 1 ? " " : ""}</span>
+          <span key={i} style={{ color: KEY.includes(w.replace(/[^A-Z0-9.ÁÉÍÓÚÑ]/g, "")) ? B.yellow : B.white }}>{w.replace(/_/g, " ")}{i < c.words.length - 1 ? " " : ""}</span>
         ))}
       </div>
     </div>
