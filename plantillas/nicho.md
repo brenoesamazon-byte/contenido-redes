@@ -15,5 +15,3 @@ Tipo: estrategia · Fecha: 30 oct 2026 · Estado: listo
 - Tema de fondo: emprender sin tiempo, sin dinero en anuncios y sin saberlo todo. Lo técnico (IA, Hotmart, prompts) solo como lo que me ayudó dentro de la historia.
 - Gancho fijo: el reto (DÍA X + franja roja). Se quedan por ver si llego a 10K.
 
-## Cuentas a analizar
-- @magi_pons
