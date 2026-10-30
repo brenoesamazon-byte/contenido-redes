@@ -8,7 +8,7 @@ Fotos de Breno con el fondo de la oficina cambiado por el estudio. Capturas real
 1. ¿No sabes qué grabar? Claude te lo dice en 2 minutos
 2. Antes, guárdalo y compártelo con ese amigo que crea contenido
 3. Abre Claude y pega este PROMPT
-4. Cambia [cuenta] por una grande de tu nicho (ejemplo real con @hotmart.spain)
+4. Claude busca la cuenta, abre sus reels y los analiza (captura real con @hotmart.spain)
 5. Te dice qué le funciona y cuántas vistas tiene
 6. Y qué tienes que grabar tú
 7. ¿Quieres el prompt? Comenta IDEAS y te lo mando por privado
