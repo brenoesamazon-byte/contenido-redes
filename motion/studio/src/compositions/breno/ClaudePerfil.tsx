@@ -4,28 +4,27 @@ import { ease, progress } from "../../lib/motion";
 import { B, f, FPS, useWindow } from "./shared";
 
 // «Claude me dijo por qué no me siguen» (30 oct 2026). Base ya cortada en public/local/claude_base.mp4.
-export const CLAUDE_PERFIL_TOTAL_S = 48.6;
+export const CLAUDE_PERFIL_TOTAL_S = 47.4;
 
 const SEGS: { start: number; end: number; text: string }[] = [
   { start: 0.09, end: 4.8, text: "Me faltan 40 seguidores para llegar a 5.000 y esta semana he perdido" },
   { start: 4.86, end: 7.85, text: "así que le pedí a Claude que me dijera por qué" },
-  { start: 7.9, end: 8.8, text: "Ven y te lo enseño" },
-  { start: 8.89, end: 14.85, text: "Le pasé mis estadísticas y en dos minutos me soltó tres cosas que yo no había visto" },
-  { start: 14.97, end: 15.55, text: "Una" },
-  { start: 15.61, end: 21.3, text: "Casi 9 de cada 10 seguidores son de Brasil y yo hablo español así que mis vídeos no les llegan" },
-  { start: 21.37, end: 21.82, text: "Dos" },
-  { start: 21.88, end: 25.75, text: "En un mes me vieron más de 8.000 personas y solo me siguieron 6" },
-  { start: 25.82, end: 27.22, text: "Ven el vídeo y se van" },
-  { start: 27.29, end: 28.05, text: "Y tres" },
-  { start: 28.09, end: 32.45, text: "Los vídeos que más enganchan son los que cuento mi vida no los de consejos" },
-  { start: 32.5, end: 34.78, text: "Y_esto_no_solo_sirve_para_redes" },
-  { start: 34.84, end: 38.33, text: "Si vendes algo es lo mismo que entender por qué" },
-  { start: 38.39, end: 41.15, text: "la gente entra en tu página y no compra" },
-  { start: 41.19, end: 43.3, text: "Comenta PERFIL y te mando el prompt" },
-  { start: 43.35, end: 46.1, text: "para que lo hagas con tu cuenta Sígueme" },
-  { start: 46.17, end: 48.4, text: "que si no el mensaje no te llega" },
+  { start: 7.92, end: 13.88, text: "Le pasé mis estadísticas y en dos minutos me soltó tres cosas que yo no había visto" },
+  { start: 14.0, end: 14.58, text: "Una" },
+  { start: 14.64, end: 20.33, text: "Casi 9 de cada 10 seguidores son de Brasil y yo hablo español así que mis vídeos no les llegan" },
+  { start: 20.4, end: 20.85, text: "Dos" },
+  { start: 20.91, end: 24.78, text: "En un mes me vieron más de 8.000 personas y solo me siguieron 6" },
+  { start: 24.85, end: 26.25, text: "Ven el vídeo y se van" },
+  { start: 26.32, end: 27.08, text: "Y tres" },
+  { start: 27.12, end: 31.48, text: "Los vídeos que más enganchan son los que cuento mi vida no los de consejos" },
+  { start: 31.53, end: 33.81, text: "Y_esto_no_solo_sirve_para_redes" },
+  { start: 33.87, end: 37.36, text: "Si vendes algo es lo mismo que entender por qué" },
+  { start: 37.42, end: 40.18, text: "la gente entra en tu página y no compra" },
+  { start: 40.22, end: 42.33, text: "Comenta PERFIL y te mando el prompt" },
+  { start: 42.38, end: 45.13, text: "para que lo hagas con tu cuenta Sígueme" },
+  { start: 45.2, end: 47.43, text: "que si no el mensaje no te llega" },
 ];
-const KEY = ["40", "5.000", "PERDIDO", "CLAUDE", "ENSEÑO", "TRES", "UNA", "9", "10", "BRASIL", "DOS", "8.000", "6", "VAN", "VIDA", "CONSEJOS", "VENDES", "COMPRA", "PERFIL", "PROMPT", "SÍGUEME"];
+const KEY = ["40", "5.000", "PERDIDO", "CLAUDE", "TRES", "UNA", "9", "10", "BRASIL", "DOS", "8.000", "6", "VAN", "VIDA", "CONSEJOS", "VENDES", "COMPRA", "PERFIL", "PROMPT", "SÍGUEME"];
 
 type Chunk = { start: number; end: number; words: string[] };
 const chunks: Chunk[] = (() => {
@@ -114,10 +113,10 @@ const ClaudeChip: React.FC<{ start: number; end: number; text: string }> = ({ st
 
 const Cta: React.FC = () => {
   const frame = useCurrentFrame();
-  const { p, visible } = useWindow(41.2, 48.6, 10, 4);
+  const { p, visible } = useWindow(40.23, 47.4, 10, 4);
   if (!visible) return null;
   const pulse = 1 + 0.03 * Math.sin(frame / 5);
-  const fol = progress(frame, f(44.4), 10, ease.out);
+  const fol = progress(frame, f(43.43), 10, ease.out);
   return (
     <div style={{ position: "absolute", left: 60, right: 60, top: 1010, opacity: p, display: "flex", flexDirection: "column", alignItems: "center", gap: 22, fontFamily: B.font }}>
       <div style={{ transform: `scale(${pulse})`, background: B.white, border: `6px solid ${B.black}`, borderRadius: 22, padding: "18px 36px", textAlign: "center", boxShadow: "0 18px 40px rgba(0,0,0,.35)" }}>
@@ -130,15 +129,15 @@ const Cta: React.FC = () => {
   );
 };
 
-const CUTS = [0, 7.02, 7.82, 8.79, 10.59, 13.58, 21.29, 21.84, 25.74, 27.24, 32.44, 36.59, 38.34, 41.19, 46.09];
-const FLASH = [8.79, 10.59, 13.58, 32.44, 36.59, 41.19];
-const WHOOSH = [8.72, 10.52, 13.5, 32.37, 36.52, 41.1];
+const CUTS = [0, 7.02, 7.82, 12.61, 20.32, 20.87, 24.77, 26.27, 31.47, 35.62, 37.37, 40.22, 45.12];
+const FLASH = [7.82, 12.61, 31.47, 35.62, 40.22];
+const WHOOSH = [7.75, 12.53, 31.4, 35.55, 40.13];
 
 // Música de fondo: más baja cuando hablas, sube un poco en los planos del portátil y se apaga al final.
 const padVol = (fr: number) => {
   const t = fr / FPS;
-  const broll = (t >= 10.59 && t < 13.58) || (t >= 32.44 && t < 36.59) ? 0.13 : 0.075;
-  const fin = interpolate(t, [46.6, 48.6], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const broll = (t >= 7.82 && t < 12.61) || (t >= 31.47 && t < 35.62) ? 0.13 : 0.075;
+  const fin = interpolate(t, [45.63, 47.63], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const ini = interpolate(t, [0, 1], [0.4, 1], { extrapolateRight: "clamp" });
   return broll * fin * ini;
 };
@@ -150,7 +149,7 @@ const beatVol = (start: number, end: number, v: number) => (fr: number) => {
 export const ClaudePerfil: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
-  const subsY = t >= 14.97 && t < 32.45 ? 1420 : t >= 41.2 ? 1500 : 1430;
+  const subsY = t >= 14.0 && t < 31.48 ? 1420 : t >= 40.23 ? 1500 : 1430;
   // Zoom lento dentro de cada plano (sin acercarse demasiado) y destello corto en los cambios de escena.
   const segStart = [...CUTS].reverse().find((c) => t >= c) ?? 0;
   const segEnd = CUTS.find((c) => c > t) ?? CLAUDE_PERFIL_TOTAL_S;
@@ -163,30 +162,29 @@ export const ClaudePerfil: React.FC = () => {
       </AbsoluteFill>
       <AbsoluteFill style={{ background: "#fff", opacity: flash, pointerEvents: "none" }} />
       <HookCard />
-      <ClaudeChip start={10.6} end={13.55} text="Claude analizando mi perfil" />
-      <PointCard start={14.97} end={21.3} n="1" a="9 DE CADA 10" b="SON DE BRASIL" />
-      <PointCard start={21.37} end={27.22} n="2" a="8.000 ME VIERON" b="SOLO 6 ME SIGUIERON" />
-      <PointCard start={27.29} end={32.45} n="3" a="TU VIDA ENGANCHA" b="TUS CONSEJOS NO" />
-      <ClaudeChip start={32.5} end={36.55} text="Sirve para tu negocio" />
+      <ClaudeChip start={7.9} end={12.58} text="Claude analizando mi perfil" />
+      <PointCard start={14.0} end={20.33} n="1" a="9 DE CADA 10" b="SON DE BRASIL" />
+      <PointCard start={20.4} end={26.25} n="2" a="8.000 ME VIERON" b="SOLO 6 ME SIGUIERON" />
+      <PointCard start={26.32} end={31.48} n="3" a="TU VIDA ENGANCHA" b="TUS CONSEJOS NO" />
+      <ClaudeChip start={31.53} end={35.58} text="Sirve para tu negocio" />
       <Cta />
-      {t < 41.2 || t >= 43.3 ? <Subs y={subsY} /> : null}
+      {t < 40.23 || t >= 42.33 ? <Subs y={subsY} /> : null}
 
       <Sequence from={2} durationInFrames={20}><Audio src={staticFile("sfx/interface/select_008.ogg")} volume={0.45} /></Sequence>
-      <Sequence from={f(8.8)} durationInFrames={20}><Audio src={staticFile("sfx/ui/switch3.ogg")} volume={0.4} /></Sequence>
-      <Sequence from={f(10.7)} durationInFrames={10}><Audio src={staticFile("sfx/keyboard/keypress-004.wav")} volume={0.35} /></Sequence>
-      <Sequence from={f(11.0)} durationInFrames={10}><Audio src={staticFile("sfx/keyboard/keypress-009.wav")} volume={0.35} /></Sequence>
-      <Sequence from={f(11.25)} durationInFrames={10}><Audio src={staticFile("sfx/keyboard/keypress-015.wav")} volume={0.35} /></Sequence>
-      {[14.97, 21.37, 27.29].map((s) => (
+            <Sequence from={f(9.73)} durationInFrames={10}><Audio src={staticFile("sfx/keyboard/keypress-004.wav")} volume={0.35} /></Sequence>
+      <Sequence from={f(10.03)} durationInFrames={10}><Audio src={staticFile("sfx/keyboard/keypress-009.wav")} volume={0.35} /></Sequence>
+      <Sequence from={f(10.28)} durationInFrames={10}><Audio src={staticFile("sfx/keyboard/keypress-015.wav")} volume={0.35} /></Sequence>
+      {[14.0, 20.4, 26.32].map((s) => (
         <Sequence key={s} from={f(s)} durationInFrames={20}><Audio src={staticFile("sfx/interface/drop_002.ogg")} volume={0.5} /></Sequence>
       ))}
-      <Sequence from={f(41.2)} durationInFrames={20}><Audio src={staticFile("sfx/interface/bong_001.ogg")} volume={0.4} /></Sequence>
-      <Sequence from={f(44.4)} durationInFrames={10}><Audio src={staticFile("sfx/ui/click3.ogg")} volume={0.5} /></Sequence>
+      <Sequence from={f(40.23)} durationInFrames={20}><Audio src={staticFile("sfx/interface/bong_001.ogg")} volume={0.4} /></Sequence>
+      <Sequence from={f(43.43)} durationInFrames={10}><Audio src={staticFile("sfx/ui/click3.ogg")} volume={0.5} /></Sequence>
 
       {/* Música suave de fondo */}
       <Audio src={staticFile("local/pad.wav")} volume={padVol} />
       {/* Latido: tensión en el gancho y en el dato que duele */}
-      <Sequence from={0} durationInFrames={f(8.8)}><Audio src={staticFile("local/heartbeat.wav")} volume={beatVol(0, 8.8, 0.5)} /></Sequence>
-      <Sequence from={f(21.37)} durationInFrames={f(5.85)}><Audio src={staticFile("local/heartbeat.wav")} volume={beatVol(21.37, 27.22, 0.45)} /></Sequence>
+      <Sequence from={0} durationInFrames={f(7.83)}><Audio src={staticFile("local/heartbeat.wav")} volume={beatVol(0, 7.83, 0.5)} /></Sequence>
+      <Sequence from={f(20.4)} durationInFrames={f(5.85)}><Audio src={staticFile("local/heartbeat.wav")} volume={beatVol(20.4, 26.25, 0.45)} /></Sequence>
       {WHOOSH.map((s) => (
         <Sequence key={`w${s}`} from={f(s)} durationInFrames={20}><Audio src={staticFile("local/whoosh.wav")} volume={0.35} /></Sequence>
       ))}
