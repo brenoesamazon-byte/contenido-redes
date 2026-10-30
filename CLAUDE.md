@@ -71,3 +71,10 @@ Viene incluido en este repo (MIT, de Enrique Rocha / tododeia):
 ## Commits
 
 Mensajes cortos en español: `añade carrusel errores gimnasio (S44, instagram)`.
+
+### Formato «El truco de Claude» (probado el 30 oct 2026)
+- Plantilla: `motion/studio/src/compositions/breno/ClaudePerfil2.tsx` (toma única a cámara + planos del portátil, tarjetas 1·2·3 arriba sobre la pared, barra de seguidores, contador, CTA «COMENTA PALABRA», latido/música/whoosh generados en `public/local/`).
+- Grabación: móvil en vertical, a cámara, de cerca, delante de la estantería blanca; sin AirPods; dejar aire encima de la cabeza. Nada en horizontal.
+- Voz clonada (ElevenLabs) solo en tramos sin cara (portátil, capturas). A cámara, siempre su voz.
+- Montaje: cortar pausas y repeticiones, `highpass,afftdn,acompressor,loudnorm -14` en la voz; revisar fotogramas con `remotion still` antes del render completo.
+- Para ahorrar uso: una sesión nueva por vídeo y todos los cambios en un solo mensaje.
