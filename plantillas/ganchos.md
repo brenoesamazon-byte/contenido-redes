@@ -50,3 +50,6 @@ Gancho con lo que Claude hizo por mí (dato real del reto) → prueba en pantall
 
 ## Registro de ganchos usados
 - 30 oct · «Me faltan 40 seguidores para llegar a 5.000 y esta semana he perdido» · tipo Número real / Reto
+- 2 nov · «Google acaba de admitir algo que cambia cómo te van a encontrar» · tipo Curiosidad (noticia)
+- 2 nov · «Con cinco años, tu hijo puede aprender lo que tú aún no sabes» · tipo Identificación (pódcast)
+- 2 nov · «Tienes un ayudante gratis para tu negocio y no lo estás usando» · tipo Curiosidad
